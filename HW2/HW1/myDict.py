@@ -9,7 +9,7 @@ for i in range(size):
 print(f"\n You have {size} items in your cart")
 
 while True: 
-    option= input("\n[C]hange  [R]emove [D]isplay [S]earch [*] Exit: ").upper()
+    option= input("\n[A] Add [C]hange  [R]emove [D]isplay [S]earch [*] Exit: ").upper()
 
     if option == "D":
         print("\nKey\tItem") 
@@ -43,6 +43,12 @@ while True:
             print(f"The key {key} has been updated to {new_item}")
         else:
             print ("I'm sorry not in the cart")
+
+    elif option == "A":
+        new_key = max(mydict.keys(), default=-1) + 1 
+        new_item = input("Enter new item to add: ")
+        mydict[new_key] = new_item
+        print(f"Item '{new_item}' added with key {new_key}")
 
     elif option == "*":
         print("Bye!")
